@@ -6,6 +6,7 @@
   <a href="https://github.com/jakemorgan-research/ue5-blueprint-diagnostics-lab/actions/workflows/validate.yml"><img src="https://github.com/jakemorgan-research/ue5-blueprint-diagnostics-lab/actions/workflows/validate.yml/badge.svg" alt="Validate"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-059669.svg" alt="MIT License"></a>
   <img src="https://img.shields.io/badge/UE-5.4%20case-2563eb.svg" alt="UE 5.4 case">
+  <img src="https://img.shields.io/badge/release-v1.0.0-0f766e.svg" alt="Release v1.0.0">
   <img src="https://img.shields.io/badge/assets-docs%20only-7c3aed.svg" alt="Documentation only">
 </p>
 
@@ -47,18 +48,20 @@ OnReleased → MakeCommand(stop)  → Send TCP
 
 ## What came from the inspected projects?
 
-**Observed:** TCP client calls, connection/receive delegates, IP and port input, press/release controls, Base + JointA–JointE, camera switching, drone Pawn, charts, and serial/Arduino references.
+**Observed:** TCP client calls, connection/receive delegates, IP and port input, press/release controls, Base + JointA–JointE, camera switching, drone Pawn, charts, serial/Arduino references, a Windows Shipping executable, and an Android ARM64 Shipping APK with install artifacts.
+
+**Completion evidence:** both project descriptors record UE 5.4; package artifacts are present on the inspected workstation, and the maintainer confirms the packaged Android-to-desktop LAN workflow was completed on real devices.
 
 **Rebuilt for this repository:** the public protocol, safe server architecture, validation rules, diagrams, naming, and test plan.
 
 [Open the evidence report →](docs/ue5/PROJECT_EVIDENCE_REPORT.md) · [Browse the node library →](docs/ue5/NODE_LIBRARY.md)
 
-> **Release blocker found:** the private source project contained a credential in a Blueprint default. The value is excluded here; it must be revoked and removed before any project package is shared. [Read the remediation guide →](docs/ue5/SECURITY_REMEDIATION.md)
+> **Security boundary resolved for this release:** a historical credential finding was removed from the inspected source copies and is absent from this repository and its reachable Git history. Original packages and private logs remain excluded. [Read the remediation guide →](docs/ue5/SECURITY_REMEDIATION.md)
 
 <details>
 <summary><strong>Install the Codex skill</strong></summary>
 
-Copy <code>skills/ue5-blueprint-troubleshooter</code> into your Codex skills directory and refresh Codex.
+Download the installable ZIP from the latest GitHub Release, or copy <code>skills/ue5-blueprint-troubleshooter</code> into your Codex skills directory and refresh Codex.
 
 ~~~text
 Use $ue5-blueprint-troubleshooter to explain this Blueprint and give me the smallest reproducible test.
@@ -81,7 +84,7 @@ scripts/                               Link, privacy, and skill checks
 <details>
 <summary><strong>Evidence and privacy boundary</strong></summary>
 
-This repository does not claim that every hidden Blueprint path was reproduced end to end. Plugin node names can vary. Package and two-device tests remain required.
+The inspected workstation contains completed Windows and Android Shipping outputs, and the maintainer reports successful two-device LAN operation. This public repository independently validates the documentation, Skill package, links, and privacy boundary; it does not publish private device logs or claim compatibility with every device, network, plugin version, or store policy.
 
 Original <code>.uasset</code>, <code>.umap</code>, Windows builds, APKs, Marketplace content, logs, tokens, addresses, and personal information are excluded. See [the release boundary](docs/OPEN_SOURCE_BOUNDARY.md).
 </details>

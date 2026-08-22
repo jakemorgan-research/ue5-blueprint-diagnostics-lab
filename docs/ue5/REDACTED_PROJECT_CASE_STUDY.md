@@ -6,7 +6,8 @@ This case study describes reusable engineering ideas from two privately held Unr
 
 - **Observed:** visible in project structure, configuration, package output, editor UI, or Blueprint asset metadata.
 - **Reconstruction:** a clean-room implementation that developers can reproduce without the original project.
-- **Unverified:** requires a packaged two-device test or deeper Blueprint export.
+- **Packaged artifact verified:** a Shipping output exists on the inspected workstation.
+- **Maintainer-confirmed runtime:** the maintainer reports completing the packaged two-device workflow; private logs are excluded.
 
 ## Project relationship
 
@@ -79,11 +80,15 @@ timeline
             : Test Wi-Fi, firewall, suspend/resume, and reconnect
 ```
 
-## What remains unverified
+## Runtime completion and disclosure boundary
+
+Windows and Android Shipping artifacts were verified on the inspected workstation. The maintainer confirms that the packaged phone controller and desktop application completed the intended LAN workflow on real devices.
+
+The public case study does not disclose or generalize:
 
 - the exact original desktop server Blueprint asset and its final port;
 - the original wire format used by every control button;
 - whether all three feature families were included in the same final package;
 - behavior across every Android device and network.
 
-The guides in this repository therefore use an explicit, versioned example protocol rather than disclosing or guessing original private defaults.
+The guides therefore use an explicit, versioned example protocol rather than disclosing private defaults. These boundaries do not block the documentation and Skill release.

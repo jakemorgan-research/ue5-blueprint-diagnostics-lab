@@ -20,3 +20,4 @@ jobs:
       - run: python scripts/validate_skills.py .
       - run: python scripts/check_public_release.py . --history
       - run: python scripts/check_links.py .
+      - run: python scripts/package_skill.py --check

@@ -5,8 +5,7 @@ Do not report passwords, API keys, private repository links, proprietary UE asse
 Before publishing a change, run:
 
 ```text
-python scripts/check_public_release.py .
+python scripts/check_public_release.py . --history
 ```
 
 The checker is a safety net, not a guarantee. Review the complete staged diff and repository visibility before publication.
-

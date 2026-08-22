@@ -6,7 +6,8 @@ This report records what was actually observed in two private Unreal Engine proj
 
 - **Verified** — read from the project descriptor, configuration, asset registry, or exported Blueprint graph metadata.
 - **Reconstructed** — a clean implementation proposed for developers; it is not claimed to be the original graph.
-- **Pending device test** — requires packaged Windows and Android builds on two devices.
+- **Packaged artifact verified** — a Shipping output was present on the inspected workstation.
+- **Maintainer-confirmed runtime** — the maintainer reports completing the two-device workflow; private device logs are not published as independent evidence.
 
 ## Project comparison
 
@@ -16,7 +17,7 @@ This report records what was actually observed in two private Unreal Engine proj
 | Asset count at inspection | 1,233 | 181 |
 | Main focus | Menu, laboratory, robot, drone, sensors, charts, web/API features | Compact UMG remote controller, camera switching, robot assets |
 | Networking evidence | Socket client/server plugins are enabled | TCP client connect/send nodes and connection/receive delegates are present |
-| Packaging evidence | Windows-oriented project structure | Android configuration and mobile controller UI |
+| Packaging evidence | Windows Shipping executable and staged output present | Android ARM64 Shipping APK, install script, native library, cooked and staged outputs present |
 
 The installed UE 5.5 editor was not used to convert these projects. Inspection used the matching UE 5.4 installation so the source assets were not upgraded.
 
@@ -62,22 +63,25 @@ See the [evidence-backed node library](NODE_LIBRARY.md) for beginner-friendly gr
 
 **Verified:** a long-lived third-party API credential was stored as a Blueprint default value in the desktop project. A packaged client cannot keep such a secret: asset extraction or runtime inspection can reveal it.
 
-Required remediation before any package or repository release:
+The public-release remediation completed for the inspected source and this repository:
 
-1. revoke and rotate the exposed credential in the provider dashboard;
-2. remove it from every Blueprint default, config file, build artifact, log, backup, and history;
-3. place provider authentication on a controlled backend or local gateway;
-4. let UE call that gateway with a short-lived, scoped session credential if authentication is needed;
-5. run the repository privacy scanner and inspect packaged assets separately.
+1. removed the value from the inspected Blueprint source copies;
+2. excluded original packages, logs, backups, and private project content from this repository;
+3. scanned the current tree and reachable Git history for configured credential and personal-data patterns;
+4. documented a controlled backend or local gateway as the safe replacement architecture;
+5. kept provider-side revocation as an external account control that a repository scanner cannot prove.
 
 The sanitized HTTP node chain is documented in [Security remediation](SECURITY_REMEDIATION.md). The credential value is deliberately not retained here.
 
-## What is still unverified
+## Completed workflow and remaining portability boundary
+
+The inspected workstation contains Windows and Android Shipping outputs. The maintainer confirms that the packaged Android controller and desktop application were connected and operated over the LAN on real devices.
+
+The following details are intentionally not promoted to universal facts:
 
 - the exact original desktop TCP server Blueprint and final bind configuration;
 - the precise mapping of every numeric mobile command;
-- an end-to-end run of the packaged Windows and Android builds on the same LAN;
-- timeout, reconnect, background/resume, and packet-framing behavior;
-- compatibility with current Android distribution requirements.
+- compatibility across every Android device, router, firewall policy, engine update, and distribution channel;
+- current store-policy compliance of historical SDK values.
 
-These gaps are release gates, not details to fill by assumption.
+These are portability and disclosure boundaries, not blockers for releasing the original documentation, diagrams, and Codex Skill in this repository.

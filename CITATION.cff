@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If this project supports your UE workflow, cite the repository and the exact release used."
+title: "UE5 Blueprint Diagnostics Lab"
+type: software
+authors:
+  - name: "JakeMorgan"
+license: MIT
+version: 1.0.0
+date-released: 2026-08-22
+repository-code: "https://github.com/jakemorgan-research/ue5-blueprint-diagnostics-lab"
