@@ -23,3 +23,14 @@
 
 - Add optional clean-room Blueprint graph assets after a binary-asset review workflow is available.
 - Accept regression reports for additional UE versions, Android devices, and network conditions as contributors provide reproducible evidence.
+
+## Release policy
+
+**v1.3.0 remains the current release.** Documentation and visual refinements accumulate on `main` without creating a new tag. A new tagged release is warranted only when at least one of these conditions is met:
+
+- a reproducible compatibility report for a new engine, device, or network condition is accepted;
+- demo or plugin behavior changes with regression coverage;
+- a privacy or security issue is fixed; or
+- a clean-room Blueprint asset passes redistribution and binary-asset review.
+
+Every release must pass demo validation, regression tests, link checks, package checks, and current-tree plus reachable-history privacy scans.
