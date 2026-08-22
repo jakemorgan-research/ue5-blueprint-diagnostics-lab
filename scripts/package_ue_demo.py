@@ -10,7 +10,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "1.1.0"
+VERSION = "1.2.0"
 DEMO = ROOT / "examples" / "ue5-lan-control-demo"
 PLUGIN = DEMO / "Plugins" / "BlueprintEngineeringToolkit"
 LICENSE = ROOT / "LICENSE"
@@ -20,6 +20,7 @@ EXCLUDED_SUFFIXES = {".apk", ".aab", ".dll", ".exe", ".lib", ".pdb", ".so", ".ta
 DEMO_REQUIRED = {
     "UE5LanControlDemo.uproject",
     "README.md",
+    "Docs/demo-quickstart.svg",
     "Config/DefaultEngine.ini",
     "Source/UE5LanControlDemo.Target.cs",
     "Source/UE5LanControlDemo/LanDemoGameMode.cpp",

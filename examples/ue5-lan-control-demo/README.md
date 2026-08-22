@@ -2,7 +2,9 @@
 
 This is a clean-room, code-only UE 5.4 sample. It contains no original project asset, private address, credential, log, APK, executable, or Marketplace dependency.
 
-Release `v1.1.0` was compiled with UE 5.4 as an Editor target, a Win64 Development game, and an Android ARM64 Development game. Debug APK assembly also completed successfully; generated binaries are deliberately not included in the repository or source archives.
+![Standalone demo quickstart](Docs/demo-quickstart.svg)
+
+The runnable code was compiled with UE 5.4 as an Editor target, a Win64 Development game, and an Android ARM64 Development game. Debug APK assembly also completed successfully; generated binaries are deliberately not included in the repository or source archives.
 
 ## What developers can use
 
@@ -18,6 +20,12 @@ Release `v1.1.0` was compiled with UE 5.4 as an Editor target, a Win64 Developme
 3. Launch a second instance with `-game -lancontroller`.
 4. Keep `127.0.0.1`, select **Connect**, then hold and release the direction buttons.
 5. The cube in the server instance moves and stops through the newline-delimited JSON protocol.
+
+Expected screen roles:
+
+| First instance | Second instance |
+| --- | --- |
+| Engine cube and server status | Address box, Connect button, direction buttons |
 
 On Windows, extract or clone the project near the drive root if the full path is very long. Some UE toolchain operations still encounter the legacy 260-character path boundary.
 
@@ -48,3 +56,15 @@ The demo protocol is intentionally small and unauthenticated. Use it only on a c
 ```
 
 Generated `Binaries`, `Intermediate`, `Saved`, project files, APKs, and executables stay outside version control.
+
+## Copy only the plugin
+
+```text
+YourProject/
+└─ Plugins/
+   └─ BlueprintEngineeringToolkit/
+      ├─ BlueprintEngineeringToolkit.uplugin
+      └─ Source/
+```
+
+Restart the editor, allow the module to compile, then obtain `Blueprint Lan Subsystem` from the Game Instance in Blueprint. The [node library](../../docs/ue5/NODE_LIBRARY.md) lists every public node and event.

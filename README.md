@@ -6,12 +6,18 @@
   <a href="https://github.com/jakemorgan-research/ue5-blueprint-diagnostics-lab/actions/workflows/validate.yml"><img src="https://github.com/jakemorgan-research/ue5-blueprint-diagnostics-lab/actions/workflows/validate.yml/badge.svg" alt="Validate"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-059669.svg" alt="MIT License"></a>
   <img src="https://img.shields.io/badge/UE-5.4%20case-2563eb.svg" alt="UE 5.4 case">
-  <img src="https://img.shields.io/badge/release-v1.1.0-0f766e.svg" alt="Release v1.1.0">
+  <img src="https://img.shields.io/badge/release-v1.2.0-0f766e.svg" alt="Release v1.2.0">
   <img src="https://img.shields.io/badge/demo-source%20only-7c3aed.svg" alt="Source-only demo">
 </p>
 
 <p align="center"><strong>Blueprint debugging · Android ↔ Desktop · Drone · Sensors · Packaging</strong></p>
 <p align="center"><sub>Visual guides, a Codex skill, and a clean-room UE 5.4 source demo. No original project, private log, APK, or third-party asset.</sub></p>
+
+<p align="center"><strong><a href="docs/ue5/GETTING_STARTED.md">Start in five minutes →</a></strong> &nbsp;·&nbsp; <a href="https://github.com/jakemorgan-research/ue5-blueprint-diagnostics-lab/releases/latest">Download source packages</a></p>
+
+<p align="center">
+  <img src="docs/media/getting-started.svg" alt="Four-step UE5 LAN demo quickstart" width="100%">
+</p>
 
 ## Choose your path
 
@@ -35,6 +41,10 @@
 
 [Open the runnable demo →](examples/ue5-lan-control-demo/README.md)
 
+<p align="center">
+  <img src="docs/media/demo-topology.svg" alt="Controller and desktop host topology" width="100%">
+</p>
+
 ## Beginner route
 
 ### 1 — Understand the idea
@@ -57,6 +67,12 @@ OnReleased → MakeCommand(stop)  → Send TCP
 ### 4 — Test the failure paths
 
 <code>wrong IP</code> · <code>firewall</code> · <code>Wi-Fi loss</code> · <code>phone backgrounded</code> · <code>server restart</code>
+
+<p align="center">
+  <img src="docs/media/connection-troubleshooting.svg" alt="LAN connection troubleshooting decision tree" width="100%">
+</p>
+
+[Open the visual beginner guide →](docs/ue5/GETTING_STARTED.md)
 
 ## What came from the inspected projects?
 
@@ -100,6 +116,8 @@ scripts/                               Link, privacy, and skill checks
 The inspected workstation contains completed Windows and Android Shipping outputs, and the maintainer reports successful two-device LAN operation. This public repository independently validates the documentation, Skill package, links, and privacy boundary; it does not publish private device logs or claim compatibility with every device, network, plugin version, or store policy.
 
 Original <code>.uasset</code>, <code>.umap</code>, Windows builds, APKs, Marketplace content, logs, tokens, addresses, and personal information are excluded. See [the release boundary](docs/OPEN_SOURCE_BOUNDARY.md).
+
+[Run the public-release privacy checklist →](docs/PRIVACY_CHECKLIST.md)
 </details>
 
 <p align="center"><sub>Original documentation and diagrams: MIT. Unreal Engine and third-party components retain their own licenses.</sub></p>

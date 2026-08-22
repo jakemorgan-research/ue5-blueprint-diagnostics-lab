@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">Standalone UE5 LAN demo quickstart</title>
+  <desc id="desc">Run one desktop host, connect a desktop or Android controller, and follow the first checks if connection fails.</desc>
+  <rect width="1200" height="520" rx="28" fill="#071827"/>
+  <text x="54" y="62" fill="#f8fafc" font-family="Segoe UI,Arial" font-size="31" font-weight="750">Run the standalone demo</text>
+  <text x="54" y="94" fill="#bae6fd" font-family="Segoe UI,Arial" font-size="17">Open the .uproject · build when prompted · use two running instances</text>
+  <g font-family="Segoe UI,Arial">
+    <rect x="55" y="135" width="320" height="205" rx="22" fill="#047857"/><text x="82" y="180" fill="#d1fae5" font-size="15" font-weight="700">INSTANCE 1 · HOST</text><text x="82" y="220" fill="#fff" font-size="27" font-weight="750">Run normally</text><text x="82" y="258" fill="#d1fae5" font-size="17">TCP 7777 · engine cube</text><text x="82" y="291" fill="#d1fae5" font-size="17">validates every command</text>
+    <rect x="825" y="135" width="320" height="205" rx="22" fill="#2563eb"/><text x="852" y="180" fill="#dbeafe" font-size="15" font-weight="700">INSTANCE 2 · CONTROLLER</text><text x="852" y="220" fill="#fff" font-size="27" font-weight="750">-lancontroller</text><text x="852" y="258" fill="#dbeafe" font-size="17">Connect · press · release</text><text x="852" y="291" fill="#dbeafe" font-size="17">Android opens this UI</text>
+    <rect x="450" y="145" width="300" height="185" rx="22" fill="#7c3aed"/><text x="600" y="185" text-anchor="middle" fill="#ede9fe" font-size="15" font-weight="700">NEWLINE JSON</text><text x="600" y="228" text-anchor="middle" fill="#fff" font-size="22" font-weight="750">move → ack</text><path d="M485 260h230" stroke="#7dd3fc" stroke-width="7" stroke-linecap="round"/><path d="m715 260-16-11v22z" fill="#7dd3fc"/><text x="600" y="302" text-anchor="middle" fill="#fef3c7" font-size="16" font-weight="700">0.5 s timeout = stop</text>
+    <rect x="55" y="382" width="1090" height="82" rx="18" fill="#164e63"/><text x="82" y="416" fill="#cffafe" font-size="17" font-weight="700">Cannot connect?</text><text x="240" y="416" fill="#fff" font-size="17">1. Test 127.0.0.1</text><text x="455" y="416" fill="#fff" font-size="17">2. Confirm one host</text><text x="682" y="416" fill="#fff" font-size="17">3. Confirm TCP 7777</text><text x="905" y="416" fill="#fff" font-size="17">4. Then check LAN/firewall</text><text x="82" y="449" fill="#a5f3fc" font-size="15">No real LAN address is stored in this project. Enter it only at runtime for phone testing.</text>
+  </g>
+</svg>

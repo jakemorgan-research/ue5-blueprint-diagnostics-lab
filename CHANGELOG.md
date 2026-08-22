@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.0 - 2026-08-22
+
+- Added a visual five-minute beginner route for choosing, opening, and running each artifact.
+- Added visual topology and connection-troubleshooting guides with minimal supporting text.
+- Added a public-release privacy gate covering the current tree, reachable history, release archives, and human visual review.
+- Extended the privacy scanner to inspect ZIP members, archive paths, sensitive filenames, private-LAN defaults, and user paths with either slash style.
+- Updated CI to build all source archives and scan their actual contents before a release can pass.
+
 ## 1.1.0 - 2026-08-22
 
 - Added a complete clean-room UE 5.4 LAN control demo with no private or Marketplace assets.

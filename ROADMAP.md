@@ -12,6 +12,8 @@
 - [x] Publish a deterministic installable Skill archive as a tagged release.
 - [x] Publish a clean-room UE 5.4 source demo and reusable Blueprint runtime plugin.
 - [x] Compile the demo for Editor, Win64, and Android ARM64 and assemble a local validation APK.
+- [x] Add a visual five-minute route for developers and first-time UE users.
+- [x] Scan rebuilt release ZIP contents in CI before publication.
 
 ## After 1.0
 

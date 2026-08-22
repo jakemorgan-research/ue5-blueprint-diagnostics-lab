@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">LAN connection troubleshooting decision tree</title>
+  <desc id="desc">A beginner decision tree for resolving a controller that cannot connect to the desktop host.</desc>
+  <rect width="1200" height="650" rx="28" fill="#071827"/>
+  <text x="54" y="62" fill="#f8fafc" font-family="Segoe UI,Arial" font-size="31" font-weight="750">Controller cannot connect</text>
+  <text x="54" y="94" fill="#bae6fd" font-family="Segoe UI,Arial" font-size="17">Change one thing at a time. Keep the server on TCP 7777 for the first test.</text>
+  <g font-family="Segoe UI,Arial" text-anchor="middle">
+    <rect x="420" y="125" width="360" height="75" rx="18" fill="#2563eb"/><text x="600" y="172" fill="#fff" font-size="22" font-weight="750">Does loopback work?</text>
+    <path d="M510 200v55M690 200v55" stroke="#7dd3fc" stroke-width="5"/><text x="480" y="237" fill="#a7f3d0" font-size="15" font-weight="700">YES</text><text x="720" y="237" fill="#fecaca" font-size="15" font-weight="700">NO</text>
+    <rect x="140" y="255" width="370" height="92" rx="18" fill="#0f766e"/><text x="325" y="292" fill="#fff" font-size="21" font-weight="750">Try the phone</text><text x="325" y="322" fill="#d5fffa" font-size="16">Same Wi-Fi · desktop LAN address</text>
+    <rect x="690" y="255" width="370" height="92" rx="18" fill="#b45309"/><text x="875" y="292" fill="#fff" font-size="21" font-weight="750">Check local launch</text><text x="875" y="322" fill="#fff7dd" font-size="16">Host normal · client -lancontroller</text>
+    <path d="M325 347v62M875 347v62" stroke="#7dd3fc" stroke-width="5"/>
+    <rect x="90" y="409" width="470" height="105" rx="18" fill="#7c3aed"/><text x="325" y="448" fill="#fff" font-size="21" font-weight="750">Phone still fails?</text><text x="325" y="478" fill="#f3e8ff" font-size="16">Firewall · guest Wi-Fi isolation · wrong adapter</text>
+    <rect x="640" y="409" width="470" height="105" rx="18" fill="#be123c"/><text x="875" y="448" fill="#fff" font-size="21" font-weight="750">Local test still fails?</text><text x="875" y="478" fill="#ffe4e6" font-size="16">Read status · confirm one host · confirm port</text>
+    <path d="M325 514v48M875 514v48" stroke="#7dd3fc" stroke-width="5"/>
+    <rect x="90" y="562" width="470" height="55" rx="16" fill="#164e63"/><text x="325" y="596" fill="#cffafe" font-size="17" font-weight="700">Allow only the packaged app on a trusted LAN</text>
+    <rect x="640" y="562" width="470" height="55" rx="16" fill="#164e63"/><text x="875" y="596" fill="#cffafe" font-size="17" font-weight="700">Capture the exact status before changing code</text>
+  </g>
+</svg>

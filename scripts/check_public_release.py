@@ -6,14 +6,15 @@ from __future__ import annotations
 import argparse
 import re
 import subprocess
-from pathlib import Path
+import zipfile
+from pathlib import Path, PurePosixPath
 
 
 SKIP_DIRS = {".git", "node_modules", "__pycache__", "Binaries", "DerivedDataCache", "Intermediate", "Saved"}
 BLOCKED_SUFFIXES = {".docx", ".xlsx", ".xls", ".pdf", ".ris", ".enw", ".nbib", ".uasset", ".umap"}
 TEXT_SUFFIXES = {".csv", ".ini", ".json", ".md", ".ps1", ".py", ".svg", ".txt", ".yaml", ".yml"}
 PATTERNS = {
-    "Windows user path": re.compile(r"[A-Za-z]:\\Users\\[^\\\s]+", re.IGNORECASE),
+    "Windows user path": re.compile(r"[A-Za-z]:[\\/]Users[\\/][^\\/\s]+", re.IGNORECASE),
     "POSIX user path": re.compile(r"/(?:Users|home)/[^/\s]+", re.IGNORECASE),
     "possible personal phone number": re.compile(r"(?<!\d)1[3-9]\d{9}(?!\d)"),
     "possible email": re.compile(r"\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b", re.IGNORECASE),
@@ -29,7 +30,12 @@ PATTERNS = {
     "possible Slack token": re.compile(r"xox[abprs]-[A-Za-z0-9-]{20,}"),
     "possible JWT": re.compile(r"eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}"),
     "embedded URL credential": re.compile(r"[a-z][a-z0-9+.-]*://[^\s/:]+:[^\s/@]+@", re.IGNORECASE),
+    "possible private LAN IPv4": re.compile(r"\b(?:10(?:\.\d{1,3}){3}|192\.168(?:\.\d{1,3}){2}|172\.(?:1[6-9]|2\d|3[01])(?:\.\d{1,3}){2})\b"),
 }
+SENSITIVE_ARCHIVE_NAME = re.compile(
+    r"(?:^|/)(?:\.env(?:\..*)?|credentials?[^/]*|secrets?[^/]*|id_rsa|[^/]+\.(?:pem|key))$",
+    re.IGNORECASE,
+)
 
 
 def iter_files(root: Path):
@@ -48,6 +54,39 @@ def scan_text(text: str, label: str) -> list[str]:
             matches = [match for match in matches if not match.group(0).lower().endswith("@users.noreply.github.com")]
         if matches:
             findings.append(f"{finding_label}: {label}")
+    return findings
+
+
+def scan_archive(path: Path) -> list[str]:
+    findings: list[str] = []
+    try:
+        with zipfile.ZipFile(path) as archive:
+            for info in archive.infolist():
+                if info.is_dir():
+                    continue
+                member = PurePosixPath(info.filename.replace("\\", "/"))
+                label = f"archive {path.name}!{member}"
+                if member.is_absolute() or ".." in member.parts:
+                    findings.append(f"unsafe archive path: {label}")
+                    continue
+                if SENSITIVE_ARCHIVE_NAME.search(member.as_posix()):
+                    findings.append(f"sensitive filename: {label}")
+                if member.suffix.lower() in BLOCKED_SUFFIXES:
+                    findings.append(f"blocked file type: {label}")
+                    continue
+                if info.file_size > 5 * 1024 * 1024:
+                    findings.append(f"large archive member over 5 MiB: {label}")
+                if member.suffix.lower() not in TEXT_SUFFIXES and member.name not in {"LICENSE", "LICENSE.txt", ".gitignore"}:
+                    continue
+                data = archive.read(info)
+                try:
+                    text = data.decode("utf-8")
+                except UnicodeDecodeError:
+                    findings.append(f"non-UTF-8 text candidate: {label}")
+                    continue
+                findings.extend(scan_text(text, label))
+    except (OSError, zipfile.BadZipFile) as error:
+        findings.append(f"unable to inspect archive {path}: {error}")
     return findings
 
 
@@ -115,6 +154,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("root", nargs="?", default=".", type=Path)
     parser.add_argument("--history", action="store_true", help="scan reachable Git history and commit metadata")
+    parser.add_argument("--archives", action="append", type=Path, default=[], help="scan ZIP files in this path")
     args = parser.parse_args()
     root = args.root.resolve()
     findings: list[str] = []
@@ -137,6 +177,14 @@ def main() -> int:
 
     if args.history:
         findings.extend(scan_history(root))
+
+    for archive_root in args.archives:
+        resolved = archive_root.resolve()
+        archive_paths = [resolved] if resolved.is_file() else sorted(resolved.rglob("*.zip"))
+        if not archive_paths:
+            findings.append(f"no ZIP archives found: {resolved}")
+        for archive_path in archive_paths:
+            findings.extend(scan_archive(archive_path))
 
     if findings:
         print("Public-release check failed:")
