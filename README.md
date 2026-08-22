@@ -6,7 +6,7 @@
   <a href="https://github.com/jakemorgan-research/ue5-blueprint-diagnostics-lab/actions/workflows/validate.yml"><img src="https://github.com/jakemorgan-research/ue5-blueprint-diagnostics-lab/actions/workflows/validate.yml/badge.svg" alt="Validate"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-059669.svg" alt="MIT License"></a>
   <img src="https://img.shields.io/badge/UE-5.4%20case-2563eb.svg" alt="UE 5.4 case">
-  <img src="https://img.shields.io/badge/release-v1.2.0-0f766e.svg" alt="Release v1.2.0">
+  <img src="https://img.shields.io/badge/release-v1.3.0-0f766e.svg" alt="Release v1.3.0">
   <img src="https://img.shields.io/badge/demo-source%20only-7c3aed.svg" alt="Source-only demo">
 </p>
 
@@ -74,6 +74,16 @@ OnReleased → MakeCommand(stop)  → Send TCP
 
 [Open the visual beginner guide →](docs/ue5/GETTING_STARTED.md)
 
+## Verified compatibility, without guesswork
+
+<p align="center">
+  <img src="docs/media/compatibility-matrix.svg" alt="UE5 compatibility evidence matrix" width="100%">
+</p>
+
+UE 5.4 Editor, Win64, headless startup, and Android ARM64 build paths have local clean-room evidence. Later engine versions and other operating systems remain explicitly untested until a reproducible contributor report is accepted.
+
+[Read the compatibility matrix →](docs/ue5/COMPATIBILITY.md) · [Report a clean-room result →](https://github.com/jakemorgan-research/ue5-blueprint-diagnostics-lab/issues/new?template=compatibility_report.yml)
+
 ## What came from the inspected projects?
 
 **Observed:** TCP client calls, connection/receive delegates, IP and port input, press/release controls, Base + JointA–JointE, camera switching, drone Pawn, charts, serial/Arduino references, a Windows Shipping executable, and an Android ARM64 Shipping APK with install artifacts.
@@ -106,7 +116,8 @@ docs/ue5/                              Visual engineering guides
 docs/media/                            Original SVG diagrams
 skills/ue5-blueprint-troubleshooter/   Installable Codex skill
 examples/ue5-lan-control-demo/          Code-only UE 5.4 demo + reusable plugin
-scripts/                               Link, privacy, and skill checks
+scripts/                               Demo, link, privacy, package, and skill checks
+tests/                                 Static demo-validator regression tests
 ~~~
 </details>
 

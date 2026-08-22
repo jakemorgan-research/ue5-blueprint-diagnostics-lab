@@ -8,6 +8,8 @@ The repository must remain private until every gate passes.
 
 ```text
 python scripts/validate_skills.py .
+python scripts/validate_ue_demo.py .
+python -m unittest discover -s tests -v
 python scripts/check_links.py .
 python scripts/package_skill.py --output dist/ue5-blueprint-troubleshooter.zip
 python scripts/package_ue_demo.py --output-dir dist

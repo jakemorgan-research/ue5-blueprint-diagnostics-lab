@@ -1,0 +1,5 @@
+examples/ue5-lan-control-demo/** linguist-detectable=true linguist-documentation=false linguist-vendored=false
+examples/ue5-lan-control-demo/**/*.h linguist-language=C++
+examples/ue5-lan-control-demo/**/*.cpp linguist-language=C++
+examples/ue5-lan-control-demo/**/*.Build.cs linguist-language=C#
+examples/ue5-lan-control-demo/**/*.Target.cs linguist-language=C#

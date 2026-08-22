@@ -17,6 +17,7 @@ REQUIRED = {
     "references/android-packaging.md",
     "references/blueprint-explanation.md",
     "references/common-failures.md",
+    "references/compatibility-and-reporting.md",
     "references/drone-sensors.md",
     "references/evidence-backed-nodes.md",
     "references/lan-remote-control.md",

@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.3.0 - 2026-08-22
+
+- Added an evidence-scoped engine, platform, and packaging compatibility matrix.
+- Added a privacy-safe compatibility issue form, regression report, and pull-request checklist.
+- Added static validation for descriptors, release versions, neutral identity, Blueprint APIs, network fail-safes, and release boundaries.
+- Added regression tests and made demo validation a required CI step.
+- Added Linguist overrides so the clean-room C++ and C# demo is represented in repository language statistics.
+
 ## 1.2.0 - 2026-08-22
 
 - Added a visual five-minute beginner route for choosing, opening, and running each artifact.

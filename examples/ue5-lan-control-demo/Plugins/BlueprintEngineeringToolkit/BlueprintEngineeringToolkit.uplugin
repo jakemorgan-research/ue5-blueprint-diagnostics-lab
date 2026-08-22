@@ -1,7 +1,7 @@
 {
   "FileVersion": 3,
   "Version": 1,
-  "VersionName": "1.2.0",
+  "VersionName": "1.3.0",
   "FriendlyName": "Blueprint Engineering Toolkit",
   "Description": "Blueprint-callable TCP LAN control nodes with newline-delimited JSON framing and safe stop commands.",
   "Category": "Networking",

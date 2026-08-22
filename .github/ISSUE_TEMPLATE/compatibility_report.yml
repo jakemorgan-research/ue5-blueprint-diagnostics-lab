@@ -1,0 +1,48 @@
+name: Compatibility report
+description: Report a pass or failure on another UE version, platform, or device
+title: "[Compatibility]: "
+labels: ["compatibility", "verification"]
+body:
+  - type: markdown
+    attributes:
+      value: Use a clean-room reproduction. Remove account names, machine paths, real LAN addresses, device identifiers, credentials, private logs, and proprietary assets.
+  - type: input
+    id: engine
+    attributes:
+      label: Exact Unreal Engine version
+      placeholder: 5.4.4
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Platform and build configuration
+      placeholder: Win64 Development or Android ARM64 Development
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Sanitized toolchain and device context
+      description: Include only non-identifying versions required to reproduce the result.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected and observed result
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy and rights check
+      options:
+        - label: I removed personal information, real addresses, credentials, private logs, and non-redistributable assets.
+          required: true

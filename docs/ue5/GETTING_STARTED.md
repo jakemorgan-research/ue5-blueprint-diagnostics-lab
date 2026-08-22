@@ -43,3 +43,5 @@ Start with the same-computer test. It separates a project/runtime problem from f
 - Need Blueprint node sequences? Open the [node library](NODE_LIBRARY.md).
 - Need Android packaging? Open the [Android guide](ANDROID_PACKAGING.md).
 - Need to adapt the protocol? Open the [control protocol](CONTROL_PROTOCOL.md).
+- Need to know what is actually verified? Open the [compatibility matrix](COMPATIBILITY.md).
+- Tested another engine or device? Use the [regression report template](REGRESSION_REPORT_TEMPLATE.md).

@@ -10,7 +10,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "1.2.0"
+VERSION = "1.3.0"
 DEMO = ROOT / "examples" / "ue5-lan-control-demo"
 PLUGIN = DEMO / "Plugins" / "BlueprintEngineeringToolkit"
 LICENSE = ROOT / "LICENSE"

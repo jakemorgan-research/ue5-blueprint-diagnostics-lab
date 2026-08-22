@@ -50,6 +50,7 @@ Treat moves, renames, redirector fixes, asset deletion, plugin removal, and conf
 - Read `references/android-packaging.md` for Android package diagnosis and real-device verification.
 - Read `references/drone-sensors.md` for drone, serial sensor, telemetry, and chart workflows.
 - Read `references/evidence-backed-nodes.md` for verified node chains from the sanitized two-project case and its credential-safety boundary.
+- Read `references/compatibility-and-reporting.md` before claiming engine, platform, package, network, or device compatibility.
 
 ## Completion
 
