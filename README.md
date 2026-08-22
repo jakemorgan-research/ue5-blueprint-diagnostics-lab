@@ -1,54 +1,87 @@
-# UE5 Blueprint Diagnostics & LAN Control Lab
+<p align="center">
+  <img src="docs/media/ue5-hero.svg" alt="UE5 Blueprint Engineering Lab" width="100%">
+</p>
 
-An evidence-oriented Codex skill and practical engineering handbook for Unreal Engine 5 Blueprint projects. It explains how to diagnose Blueprint failures, organize an asset-heavy project, visualize sensor data, package an Android controller, and connect that controller to a desktop UE application over a local network.
+<p align="center">
+  <a href="https://github.com/jakemorgan-research/ue5-blueprint-diagnostics-lab/actions/workflows/validate.yml"><img src="https://github.com/jakemorgan-research/ue5-blueprint-diagnostics-lab/actions/workflows/validate.yml/badge.svg" alt="Validate"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-059669.svg" alt="MIT License"></a>
+  <img src="https://img.shields.io/badge/UE-5.4%20case-2563eb.svg" alt="UE 5.4 case">
+  <img src="https://img.shields.io/badge/assets-docs%20only-7c3aed.svg" alt="Documentation only">
+</p>
 
-This repository contains **documentation and independently reproducible examples only**. It does not contain the original projects, packaged applications, Marketplace assets, private logs, machine paths, credentials, or personal information.
+<p align="center"><strong>Blueprint debugging · Android ↔ Desktop · Drone · Sensors · Packaging</strong></p>
+<p align="center"><sub>Visual guides and a Codex skill. No original project, private log, APK, or third-party asset.</sub></p>
 
-## Start here
+## Choose your path
 
-| Goal | Guide |
-| --- | --- |
-| Understand the inspected project without receiving its source | [Redacted project case study](docs/ue5/REDACTED_PROJECT_CASE_STUDY.md) |
-| Build Android-to-desktop control | [LAN remote-control Blueprint recipe](docs/ue5/LAN_REMOTE_CONTROL.md) |
-| Define messages safely | [Control protocol](docs/ue5/CONTROL_PROTOCOL.md) |
-| Package and test Android | [Android packaging guide](docs/ue5/ANDROID_PACKAGING.md) |
-| Build a drone and sensor dashboard | [Drone and sensor workflow](docs/ue5/DRONE_SENSOR_WORKFLOW.md) |
-| Diagnose common Blueprint faults | [Common failures](docs/ue5/COMMON_FAILURES.md) |
-| Install the Codex skill | [Skill entrypoint](skills/ue5-blueprint-troubleshooter/SKILL.md) |
+| 📱 Build remote control | 🚁 Build drone + data | 🧩 Fix a Blueprint | 📦 Ship Android |
+| --- | --- | --- | --- |
+| [Phone → desktop, node by node](docs/ue5/LAN_REMOTE_CONTROL.md) | [Sensors → charts → HUD](docs/ue5/DRONE_SENSOR_WORKFLOW.md) | [Symptom → evidence → smallest test](docs/ue5/COMMON_FAILURES.md) | [Copy → configure → package → test](docs/ue5/ANDROID_PACKAGING.md) |
 
-## Reference architecture
+<p align="center">
+  <img src="docs/media/lan-blueprint-flow.svg" alt="Android to desktop Blueprint flow" width="100%">
+</p>
 
-```mermaid
-flowchart LR
-    Phone[Android UMG controller] -->|TCP command + newline| Server[Desktop command gateway]
-    Server --> Validate[Parse and validate]
-    Validate --> Robot[Robot command component]
-    Validate --> Drone[Drone command component]
-    Robot --> State[Authoritative state]
-    Drone --> State
-    Sensor[Serial or simulated sensors] --> Normalize[Normalize + timestamp]
-    Normalize --> Charts[UMG charts]
-    State -->|TCP state message| Phone
-```
+## Beginner route
 
-The Android application sends intent, not direct unrestricted object access. The desktop application owns the simulation state, validates every message, applies movement on the game thread, and returns state or errors.
+### 1 — Understand the idea
 
-## What is verified
+The phone sends **intent**. The desktop validates it, changes the simulation, and sends state back.
 
-The case study is based on read-only inspection of two UE projects associated with UE 5.4 and package artifacts for Windows and Android. Selected UMG Blueprints compiled in the editor. Binary asset metadata confirmed TCP client calls, connection and receive delegates, IP/port input, press/release controls for motion and robot joints, camera controls, a drone pawn, chart data, and serial/Arduino references.
+### 2 — Build one safe button
 
-The repository does **not** claim that every hidden Blueprint path was reproduced end to end. Each guide marks observations, recommended reconstruction, and verification steps separately.
+~~~text
+OnPressed → MakeCommand(start) → Send TCP
+OnReleased → MakeCommand(stop)  → Send TCP
+~~~
 
-## Codex skill
+### 3 — Package both sides
 
-Copy `skills/ue5-blueprint-troubleshooter` into your Codex skills directory and refresh Codex.
+<p align="center">
+  <img src="docs/media/android-build-flow.svg" alt="Android packaging path" width="100%">
+</p>
 
-Example:
+### 4 — Test the failure paths
 
-```text
-Use $ue5-blueprint-troubleshooter to design and verify an Android-to-desktop TCP control graph in UE5.
-```
+<code>wrong IP</code> · <code>firewall</code> · <code>Wi-Fi loss</code> · <code>phone backgrounded</code> · <code>server restart</code>
 
-## Release boundary
+## What came from the inspected projects?
 
-MIT licensed original documentation and examples only. Unreal Engine, third-party plugins, and third-party assets retain their own licenses. See [OPEN_SOURCE_BOUNDARY.md](docs/OPEN_SOURCE_BOUNDARY.md).
+**Observed:** TCP client calls, connection/receive delegates, IP and port input, press/release controls, Base + JointA–JointE, camera switching, drone Pawn, charts, and serial/Arduino references.
+
+**Rebuilt for this repository:** the public protocol, safe server architecture, validation rules, diagrams, naming, and test plan.
+
+[Open the redacted case study →](docs/ue5/REDACTED_PROJECT_CASE_STUDY.md)
+
+<details>
+<summary><strong>Install the Codex skill</strong></summary>
+
+Copy <code>skills/ue5-blueprint-troubleshooter</code> into your Codex skills directory and refresh Codex.
+
+~~~text
+Use $ue5-blueprint-troubleshooter to explain this Blueprint and give me the smallest reproducible test.
+~~~
+
+[Open the skill →](skills/ue5-blueprint-troubleshooter/SKILL.md)
+</details>
+
+<details>
+<summary><strong>Repository map</strong></summary>
+
+~~~text
+docs/ue5/                              Visual engineering guides
+docs/media/                            Original SVG diagrams
+skills/ue5-blueprint-troubleshooter/   Installable Codex skill
+scripts/                               Link, privacy, and skill checks
+~~~
+</details>
+
+<details>
+<summary><strong>Evidence and privacy boundary</strong></summary>
+
+This repository does not claim that every hidden Blueprint path was reproduced end to end. Plugin node names can vary. Package and two-device tests remain required.
+
+Original <code>.uasset</code>, <code>.umap</code>, Windows builds, APKs, Marketplace content, logs, tokens, addresses, and personal information are excluded. See [the release boundary](docs/OPEN_SOURCE_BOUNDARY.md).
+</details>
+
+<p align="center"><sub>Original documentation and diagrams: MIT. Unreal Engine and third-party components retain their own licenses.</sub></p>

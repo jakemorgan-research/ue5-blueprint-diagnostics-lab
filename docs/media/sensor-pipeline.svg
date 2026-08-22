@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="480" viewBox="0 0 1200 480" role="img" aria-labelledby="title desc">
+  <title id="title">Drone and sensor data pipeline</title><desc id="desc">Hardware and simulation sources share one normalized, validated pipeline that feeds charts and drone telemetry.</desc>
+  <rect width="1200" height="480" rx="24" fill="#f8fafc"/>
+  <text x="56" y="62" font-family="Segoe UI,Arial" font-size="30" font-weight="750" fill="#0f172a">One data shape, many sources</text>
+  <text x="56" y="94" font-family="Segoe UI,Arial" font-size="16" fill="#64748b">Real sensors and simulated fixtures should enter the same validated path.</text>
+  <g font-family="Segoe UI,Arial">
+    <rect x="55" y="145" width="190" height="82" rx="15" fill="#1d4ed8"/><text x="150" y="178" text-anchor="middle" fill="#bfdbfe" font-size="14">SOURCE A</text><text x="150" y="207" text-anchor="middle" fill="white" font-size="20" font-weight="700">Serial / Arduino</text>
+    <rect x="55" y="270" width="190" height="82" rx="15" fill="#7c3aed"/><text x="150" y="303" text-anchor="middle" fill="#ddd6fe" font-size="14">SOURCE B</text><text x="150" y="332" text-anchor="middle" fill="white" font-size="20" font-weight="700">Simulator</text>
+    <rect x="330" y="205" width="205" height="92" rx="15" fill="#0e7490"/><text x="432" y="240" text-anchor="middle" fill="#cffafe" font-size="14">ADAPTER</text><text x="432" y="270" text-anchor="middle" fill="white" font-size="20" font-weight="700">Frame + parse</text>
+    <rect x="620" y="205" width="205" height="92" rx="15" fill="#b45309"/><text x="722" y="240" text-anchor="middle" fill="#fef3c7" font-size="14">QUALITY GATE</text><text x="722" y="270" text-anchor="middle" fill="white" font-size="20" font-weight="700">Validate + stamp</text>
+    <rect x="910" y="145" width="230" height="82" rx="15" fill="#047857"/><text x="1025" y="178" text-anchor="middle" fill="#d1fae5" font-size="14">LATEST STATE</text><text x="1025" y="207" text-anchor="middle" fill="white" font-size="20" font-weight="700">Drone HUD</text>
+    <rect x="910" y="270" width="230" height="82" rx="15" fill="#334155"/><text x="1025" y="303" text-anchor="middle" fill="#cbd5e1" font-size="14">BOUNDED HISTORY</text><text x="1025" y="332" text-anchor="middle" fill="white" font-size="20" font-weight="700">Gauge · Bar · Area</text>
+    <g stroke="#0284c7" stroke-width="6" fill="none" stroke-linecap="round"><path d="M245 186h42v65h43"/><path d="M245 311h42v-60h43"/><path d="M535 251h85"/><path d="M825 251h43v-65h42"/><path d="M825 251h43v60h42"/></g>
+  </g>
+  <rect x="55" y="399" width="1085" height="44" rx="12" fill="#e2e8f0"/><text x="598" y="427" text-anchor="middle" fill="#334155" font-family="Segoe UI,Arial" font-size="16" font-weight="650">Callback for input · bounded ring buffer · UI refresh timer · visible stale-data state</text>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">UE5 Blueprint Diagnostics and LAN Control Lab</title>
+  <desc id="desc">A visual learning lab for Blueprint debugging, Android control, drones, sensors, and packaging.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#101827"/><stop offset="1" stop-color="#144b66"/></linearGradient>
+    <linearGradient id="node" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2563eb"/><stop offset="1" stop-color="#06b6d4"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="9" stdDeviation="11" flood-opacity=".25"/></filter>
+  </defs>
+  <rect width="1200" height="360" rx="28" fill="url(#bg)"/>
+  <circle cx="1080" cy="40" r="190" fill="#38bdf8" opacity=".07"/><circle cx="1120" cy="340" r="240" fill="#22c55e" opacity=".05"/>
+  <g transform="translate(62 58)" filter="url(#shadow)">
+    <rect width="250" height="244" rx="28" fill="#f8fafc"/>
+    <rect x="24" y="30" width="88" height="62" rx="12" fill="url(#node)"/><text x="68" y="68" text-anchor="middle" fill="white" font-family="Segoe UI,Arial" font-size="17" font-weight="700">INPUT</text>
+    <rect x="138" y="30" width="88" height="62" rx="12" fill="#7c3aed"/><text x="182" y="68" text-anchor="middle" fill="white" font-family="Segoe UI,Arial" font-size="17" font-weight="700">CHECK</text>
+    <rect x="81" y="152" width="88" height="62" rx="12" fill="#059669"/><text x="125" y="190" text-anchor="middle" fill="white" font-family="Segoe UI,Arial" font-size="17" font-weight="700">ACT</text>
+    <path d="M112 61h26M182 92v30l-57 30" stroke="#334155" stroke-width="7" fill="none" stroke-linecap="round"/><circle cx="125" cy="152" r="6" fill="#334155"/>
+  </g>
+  <text x="360" y="92" fill="#a5f3fc" font-family="Segoe UI,Arial" font-size="20" font-weight="700" letter-spacing="2">VISUAL · BEGINNER FRIENDLY · EVIDENCE FIRST</text>
+  <text x="360" y="151" fill="#fff" font-family="Segoe UI,Arial" font-size="43" font-weight="750">UE5 Blueprint Engineering Lab</text>
+  <text x="360" y="198" fill="#dbeafe" font-family="Segoe UI,Arial" font-size="23">Understand the graph. Connect the devices. Ship the build.</text>
+  <g font-family="Segoe UI,Arial" font-size="16" font-weight="650">
+    <rect x="360" y="242" width="140" height="42" rx="21" fill="#fff" opacity=".13"/><text x="395" y="269" fill="#fff">Blueprints</text>
+    <rect x="514" y="242" width="164" height="42" rx="21" fill="#fff" opacity=".13"/><text x="548" y="269" fill="#fff">Android + LAN</text>
+    <rect x="692" y="242" width="160" height="42" rx="21" fill="#fff" opacity=".13"/><text x="730" y="269" fill="#fff">Drone + Data</text>
+  </g>
+</svg>

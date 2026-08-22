@@ -1,5 +1,7 @@
 # Packaging an UE Android controller
 
+![Android packaging path](../media/android-build-flow.svg)
+
 This guide targets the workflow rather than one historical SDK number. Android store and Unreal requirements change; verify the current Epic and distribution-channel documentation before release.
 
 ## 1. Make a packaging branch or copy

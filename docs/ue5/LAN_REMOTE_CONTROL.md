@@ -1,5 +1,7 @@
 # Android-to-desktop LAN control in Blueprint
 
+![Android-to-desktop Blueprint flow](../media/lan-blueprint-flow.svg)
+
 This recipe reconstructs the observed design using an explicit protocol and clear ownership boundaries. Node labels for socket operations may differ by plugin. The inspected Android asset exposed nodes named `connectSocketClientTCP`, `socketClientSendTCP`, a TCP connection-event delegate, and a TCP receive-event delegate.
 
 ## 1. Desktop components

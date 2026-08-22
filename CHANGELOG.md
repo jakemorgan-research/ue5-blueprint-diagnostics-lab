@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.1 - 2026-08-22
+
+- Reworked the landing page for visual, beginner-friendly navigation.
+- Added original diagrams for LAN Blueprint flow, Android packaging, and sensor data.
+- Added visual entry points to the three detailed engineering guides.
+
 ## 0.2.0 - 2026-08-22
 
 - Added a redacted two-project UE case study.

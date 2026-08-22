@@ -1,5 +1,7 @@
 # Drone and multi-sensor Blueprint workflow
 
+![Drone and sensor data pipeline](../media/sensor-pipeline.svg)
+
 The inspected desktop project combined a drone Pawn, camera effects, a drone widget, serial/Arduino references, and gauge/bar/area charts. This guide turns those observations into a reusable architecture.
 
 ## Architecture
