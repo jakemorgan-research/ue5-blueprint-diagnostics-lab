@@ -1,0 +1,19 @@
+{
+  "FileVersion": 3,
+  "EngineAssociation": "5.4",
+  "Category": "Samples",
+  "Description": "Privacy-clean UE5 LAN control demo with a reusable Blueprint plugin.",
+  "Modules": [
+    {
+      "Name": "UE5LanControlDemo",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    }
+  ],
+  "Plugins": [
+    {
+      "Name": "BlueprintEngineeringToolkit",
+      "Enabled": true
+    }
+  ]
+}

@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.1.0 - 2026-08-22
+
+- Added a complete clean-room UE 5.4 LAN control demo with no private or Marketplace assets.
+- Added the reusable `BlueprintEngineeringToolkit` runtime plugin with Blueprint-callable TCP server, client, move, stop, status, and event APIs.
+- Added newline-delimited JSON framing, size limits, input clamping, acknowledgements, and a server-side motion timeout.
+- Added a code-built controller UI for Android and optional desktop controller mode.
+- Verified the Editor target, headless startup, Win64 game target, Android ARM64 target, and Debug APK assembly on the inspected workstation.
+- Added deterministic source packages for the complete demo and standalone plugin.
+
 ## 1.0.0 - 2026-08-22
 
 - Verified UE 5.4 project descriptors and existing Windows and Android Shipping artifacts on the inspected workstation.

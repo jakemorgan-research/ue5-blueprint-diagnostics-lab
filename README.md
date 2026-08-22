@@ -6,12 +6,12 @@
   <a href="https://github.com/jakemorgan-research/ue5-blueprint-diagnostics-lab/actions/workflows/validate.yml"><img src="https://github.com/jakemorgan-research/ue5-blueprint-diagnostics-lab/actions/workflows/validate.yml/badge.svg" alt="Validate"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-059669.svg" alt="MIT License"></a>
   <img src="https://img.shields.io/badge/UE-5.4%20case-2563eb.svg" alt="UE 5.4 case">
-  <img src="https://img.shields.io/badge/release-v1.0.0-0f766e.svg" alt="Release v1.0.0">
-  <img src="https://img.shields.io/badge/assets-docs%20only-7c3aed.svg" alt="Documentation only">
+  <img src="https://img.shields.io/badge/release-v1.1.0-0f766e.svg" alt="Release v1.1.0">
+  <img src="https://img.shields.io/badge/demo-source%20only-7c3aed.svg" alt="Source-only demo">
 </p>
 
 <p align="center"><strong>Blueprint debugging · Android ↔ Desktop · Drone · Sensors · Packaging</strong></p>
-<p align="center"><sub>Visual guides and a Codex skill. No original project, private log, APK, or third-party asset.</sub></p>
+<p align="center"><sub>Visual guides, a Codex skill, and a clean-room UE 5.4 source demo. No original project, private log, APK, or third-party asset.</sub></p>
 
 ## Choose your path
 
@@ -22,6 +22,18 @@
 <p align="center">
   <img src="docs/media/lan-blueprint-flow.svg" alt="Android to desktop Blueprint flow" width="100%">
 </p>
+
+## Run something now
+
+<p align="center">
+  <img src="docs/media/ue5-demo-quickstart.svg" alt="Plugin and demo quickstart" width="100%">
+</p>
+
+| Use the UE plugin | Open the complete demo | Use the Codex skill |
+| --- | --- | --- |
+| Copy `BlueprintEngineeringToolkit` into a project's `Plugins` folder | Open [`UE5LanControlDemo.uproject`](examples/ue5-lan-control-demo/UE5LanControlDemo.uproject) in UE 5.4 | Download the Skill ZIP from Releases |
+
+[Open the runnable demo →](examples/ue5-lan-control-demo/README.md)
 
 ## Beginner route
 
@@ -77,6 +89,7 @@ Use $ue5-blueprint-troubleshooter to explain this Blueprint and give me the smal
 docs/ue5/                              Visual engineering guides
 docs/media/                            Original SVG diagrams
 skills/ue5-blueprint-troubleshooter/   Installable Codex skill
+examples/ue5-lan-control-demo/          Code-only UE 5.4 demo + reusable plugin
 scripts/                               Link, privacy, and skill checks
 ~~~
 </details>

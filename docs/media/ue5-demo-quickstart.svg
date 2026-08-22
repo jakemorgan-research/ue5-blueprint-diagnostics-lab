@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">UE5 LAN demo quickstart</title>
+  <desc id="desc">Three paths: install the plugin, open the demo, or install the Codex skill.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071827"/>
+      <stop offset="1" stop-color="#12344a"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-20%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#000" flood-opacity=".25"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="360" rx="28" fill="url(#bg)"/>
+  <text x="600" y="62" text-anchor="middle" fill="#f4fbff" font-family="Segoe UI,Arial" font-size="32" font-weight="700">Choose the artifact you need</text>
+  <g filter="url(#shadow)" font-family="Segoe UI,Arial">
+    <rect x="55" y="105" width="325" height="190" rx="22" fill="#0f766e"/>
+    <text x="218" y="153" text-anchor="middle" fill="#fff" font-size="26" font-weight="700">UE plugin</text>
+    <text x="218" y="194" text-anchor="middle" fill="#d9fffa" font-size="18">Copy to Plugins/</text>
+    <text x="218" y="226" text-anchor="middle" fill="#d9fffa" font-size="18">Get Blueprint LAN nodes</text>
+    <text x="218" y="266" text-anchor="middle" fill="#fff" font-size="16">BlueprintEngineeringToolkit</text>
+
+    <rect x="438" y="105" width="325" height="190" rx="22" fill="#2563eb"/>
+    <text x="600" y="153" text-anchor="middle" fill="#fff" font-size="26" font-weight="700">Complete demo</text>
+    <text x="600" y="194" text-anchor="middle" fill="#e6efff" font-size="18">Open the .uproject</text>
+    <text x="600" y="226" text-anchor="middle" fill="#e6efff" font-size="18">Run desktop + controller</text>
+    <text x="600" y="266" text-anchor="middle" fill="#fff" font-size="16">Win64 · Android ARM64</text>
+
+    <rect x="820" y="105" width="325" height="190" rx="22" fill="#7c3aed"/>
+    <text x="983" y="153" text-anchor="middle" fill="#fff" font-size="26" font-weight="700">Codex skill</text>
+    <text x="983" y="194" text-anchor="middle" fill="#f1e8ff" font-size="18">Install the Skill ZIP</text>
+    <text x="983" y="226" text-anchor="middle" fill="#f1e8ff" font-size="18">Diagnose and explain graphs</text>
+    <text x="983" y="266" text-anchor="middle" fill="#fff" font-size="16">Blueprint Troubleshooter</text>
+  </g>
+</svg>

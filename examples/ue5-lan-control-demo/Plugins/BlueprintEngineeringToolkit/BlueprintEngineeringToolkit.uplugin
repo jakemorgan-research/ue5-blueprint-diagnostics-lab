@@ -1,0 +1,20 @@
+{
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "1.1.0",
+  "FriendlyName": "Blueprint Engineering Toolkit",
+  "Description": "Blueprint-callable TCP LAN control nodes with newline-delimited JSON framing and safe stop commands.",
+  "Category": "Networking",
+  "CreatedBy": "JakeMorgan",
+  "CanContainContent": false,
+  "IsBetaVersion": false,
+  "Installed": false,
+  "Modules": [
+    {
+      "Name": "BlueprintEngineeringToolkit",
+      "Type": "Runtime",
+      "LoadingPhase": "Default",
+      "PlatformAllowList": ["Win64", "Android", "Linux", "Mac"]
+    }
+  ]
+}

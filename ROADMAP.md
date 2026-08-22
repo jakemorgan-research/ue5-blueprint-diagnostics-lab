@@ -10,8 +10,10 @@
 - [x] Record maintainer-confirmed packaged Android-to-desktop LAN completion.
 - [x] Pass current-tree and reachable-history privacy review.
 - [x] Publish a deterministic installable Skill archive as a tagged release.
+- [x] Publish a clean-room UE 5.4 source demo and reusable Blueprint runtime plugin.
+- [x] Compile the demo for Editor, Win64, and Android ARM64 and assemble a local validation APK.
 
 ## After 1.0
 
-- Add clean-room sample Blueprint exports that do not depend on private or Marketplace assets.
+- Add optional clean-room Blueprint graph assets after a binary-asset review workflow is available.
 - Add regression reports for additional UE versions, Android devices, and network conditions as contributors provide reproducible evidence.

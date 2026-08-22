@@ -24,6 +24,7 @@ secrets*.json
 *.uasset
 *.umap
 private/
+!examples/ue5-lan-control-demo/Plugins/BlueprintEngineeringToolkit/Source/BlueprintEngineeringToolkit/Private/
+!examples/ue5-lan-control-demo/Plugins/BlueprintEngineeringToolkit/Source/BlueprintEngineeringToolkit/Private/*.cpp
 captures/
 logs/
-

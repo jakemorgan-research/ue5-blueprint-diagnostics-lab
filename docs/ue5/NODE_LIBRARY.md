@@ -1,5 +1,23 @@
 # Evidence-backed UE5 Blueprint node library
 
+## Installable public nodes
+
+The clean-room [`BlueprintEngineeringToolkit`](../../examples/ue5-lan-control-demo/Plugins/BlueprintEngineeringToolkit/BlueprintEngineeringToolkit.uplugin) exposes these runtime Blueprint APIs through the Game Instance subsystem:
+
+- `Start LAN Server`
+- `Stop LAN Server`
+- `Connect To LAN Server`
+- `Disconnect LAN Client`
+- `Send Move Command`
+- `Send Stop Command`
+- `Is LAN Connected`
+- `Get LAN Status`
+- `On Connection Changed`
+- `On Move Command`
+- `On Status Message`
+
+[Run the complete UE 5.4 demonstration →](../../examples/ue5-lan-control-demo/README.md)
+
 ![Evidence-backed node chains](../media/node-library-overview.svg)
 
 This library translates inspected UE 5.4 Blueprint graphs into reproducible teaching sequences. Plugin labels can vary by version. Values marked **example** are configurable; runtime behavior still needs packaged testing.

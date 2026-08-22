@@ -13,4 +13,5 @@ python scripts/validate_skills.py .
 python scripts/check_public_release.py . --history
 python scripts/check_links.py .
 python scripts/package_skill.py --check
+python scripts/package_ue_demo.py --check
 ```
