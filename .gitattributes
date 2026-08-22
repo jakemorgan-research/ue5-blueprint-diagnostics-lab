@@ -3,3 +3,6 @@ examples/ue5-lan-control-demo/**/*.h linguist-language=C++
 examples/ue5-lan-control-demo/**/*.cpp linguist-language=C++
 examples/ue5-lan-control-demo/**/*.Build.cs linguist-language=C#
 examples/ue5-lan-control-demo/**/*.Target.cs linguist-language=C#
+# Python files are repository-maintenance tooling; the shipped demo/runtime is C++.
+**/*.py linguist-detectable=false
+
