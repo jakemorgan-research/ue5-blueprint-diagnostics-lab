@@ -4,6 +4,8 @@
 
 The inspected desktop project combined a drone Pawn, camera effects, a drone widget, serial/Arduino references, and gauge/bar/area charts. This guide turns those observations into a reusable architecture.
 
+Verified graph details include a four-component propeller update loop, camera-manager-based follow rotation, screenshot capture, field-of-view control, night vision, thermal view, and HUD values for battery, signal, altitude, speed, and height. The exact propeller and camera-follow sequences are in the [node library](NODE_LIBRARY.md).
+
 ## Architecture
 
 ```mermaid

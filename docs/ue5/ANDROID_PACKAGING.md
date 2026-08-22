@@ -4,6 +4,10 @@
 
 This guide targets the workflow rather than one historical SDK number. Android store and Unreal requirements change; verify the current Epic and distribution-channel documentation before release.
 
+## Inspected-project snapshot
+
+The Android derivative recorded UE 5.4, minimum SDK 26, target SDK 28, sensor-landscape orientation, packaged data inside the APK, Vulkan, and network permissions. It also retained a template package name and legacy storage permissions. These are historical findings, not recommended current defaults. Replace the package identity, remove permissions without a real need, and revalidate SDK requirements before distribution. See the [full evidence report](PROJECT_EVIDENCE_REPORT.md).
+
 ## 1. Make a packaging branch or copy
 
 Keep the working desktop project untouched. Create a dedicated Android branch/copy and record:

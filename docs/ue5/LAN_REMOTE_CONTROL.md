@@ -4,6 +4,8 @@
 
 This recipe reconstructs the observed design using an explicit protocol and clear ownership boundaries. Node labels for socket operations may differ by plugin. The inspected Android asset exposed nodes named `connectSocketClientTCP`, `socketClientSendTCP`, a TCP connection-event delegate, and a TCP receive-event delegate.
 
+For the exact verified client, camera, and input sequences, open the [evidence-backed node library](NODE_LIBRARY.md). The original desktop server graph was not located, so the server architecture below is explicitly a safer reconstruction.
+
 ## 1. Desktop components
 
 Create these Blueprints:

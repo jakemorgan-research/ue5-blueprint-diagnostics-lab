@@ -14,9 +14,9 @@
 
 ## Choose your path
 
-| 📱 Build remote control | 🚁 Build drone + data | 🧩 Fix a Blueprint | 📦 Ship Android |
+| 📱 Build remote control | 🚁 Build drone + data | 🧩 Read verified nodes | 📦 Ship Android |
 | --- | --- | --- | --- |
-| [Phone → desktop, node by node](docs/ue5/LAN_REMOTE_CONTROL.md) | [Sensors → charts → HUD](docs/ue5/DRONE_SENSOR_WORKFLOW.md) | [Symptom → evidence → smallest test](docs/ue5/COMMON_FAILURES.md) | [Copy → configure → package → test](docs/ue5/ANDROID_PACKAGING.md) |
+| [Phone → desktop, node by node](docs/ue5/LAN_REMOTE_CONTROL.md) | [Sensors → charts → HUD](docs/ue5/DRONE_SENSOR_WORKFLOW.md) | [Actual graph → purpose → guard](docs/ue5/NODE_LIBRARY.md) | [Copy → configure → package → test](docs/ue5/ANDROID_PACKAGING.md) |
 
 <p align="center">
   <img src="docs/media/lan-blueprint-flow.svg" alt="Android to desktop Blueprint flow" width="100%">
@@ -51,7 +51,9 @@ OnReleased → MakeCommand(stop)  → Send TCP
 
 **Rebuilt for this repository:** the public protocol, safe server architecture, validation rules, diagrams, naming, and test plan.
 
-[Open the redacted case study →](docs/ue5/REDACTED_PROJECT_CASE_STUDY.md)
+[Open the evidence report →](docs/ue5/PROJECT_EVIDENCE_REPORT.md) · [Browse the node library →](docs/ue5/NODE_LIBRARY.md)
+
+> **Release blocker found:** the private source project contained a credential in a Blueprint default. The value is excluded here; it must be revoked and removed before any project package is shared. [Read the remediation guide →](docs/ue5/SECURITY_REMEDIATION.md)
 
 <details>
 <summary><strong>Install the Codex skill</strong></summary>

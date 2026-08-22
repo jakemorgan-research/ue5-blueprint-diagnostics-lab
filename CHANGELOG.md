@@ -17,7 +17,10 @@
 
 ## Unreleased
 
-- Await verified, redacted project cases.
+- Added a sanitized evidence report for the inspected UE 5.4 desktop and Android projects.
+- Added an evidence-backed Blueprint node library with TCP, UMG, camera, drone, and HTTP flows.
+- Added credential-remediation guidance and stronger provider-key scanning.
+- Documented verified Android configuration as historical evidence with explicit release gates.
 
 ## 0.1.0-rc1 — 2026-08-21
 

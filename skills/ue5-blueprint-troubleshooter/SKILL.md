@@ -49,6 +49,7 @@ Treat moves, renames, redirector fixes, asset deletion, plugin removal, and conf
 - Read `references/lan-remote-control.md` for Android-to-desktop TCP control, command framing, press/release input, and fail-safe behavior.
 - Read `references/android-packaging.md` for Android package diagnosis and real-device verification.
 - Read `references/drone-sensors.md` for drone, serial sensor, telemetry, and chart workflows.
+- Read `references/evidence-backed-nodes.md` for verified node chains from the sanitized two-project case and its credential-safety boundary.
 
 ## Completion
 

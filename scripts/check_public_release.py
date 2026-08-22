@@ -17,6 +17,8 @@ PATTERNS = {
     "possible email": re.compile(r"\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b", re.IGNORECASE),
     "possible private key": re.compile(r"BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY"),
     "possible API secret": re.compile(r"(?:api[_ -]?key|secret|token)\s*[:=]\s*['\"][^'\"]{8,}", re.IGNORECASE),
+    "possible provider credential": re.compile(r"(?<![A-Za-z0-9])sk-[A-Za-z0-9_-]{20,}"),
+    "possible bearer credential": re.compile(r"Authorization[^\n\r]{0,80}Bearer\s+[A-Za-z0-9._~-]{20,}", re.IGNORECASE),
 }
 
 
