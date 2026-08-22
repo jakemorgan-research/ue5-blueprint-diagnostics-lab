@@ -1,0 +1,7 @@
+interface:
+  display_name: "UE5 Blueprint Troubleshooter"
+  short_description: "Explain Blueprint flows and diagnose UE5 failures"
+  default_prompt: "Use $ue5-blueprint-troubleshooter to diagnose and explain this UE5 Blueprint problem."
+policy:
+  allow_implicit_invocation: true
+

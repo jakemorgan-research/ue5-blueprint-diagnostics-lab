@@ -1,0 +1,36 @@
+name: UE5 reproducible case
+description: Submit a redacted UE5 Blueprint failure or verified behavior.
+title: "[UE5]: "
+labels: ["ue5", "triage"]
+body:
+  - type: input
+    id: engine
+    attributes:
+      label: UE version and platform
+      placeholder: "UE 5.x; Windows/Linux/macOS/console"
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and observed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction and exact error
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Redacted graph, log, or project link
+  - type: checkboxes
+    id: rights
+    attributes:
+      label: Sharing rights
+      options:
+        - label: I have the right to share these materials and removed proprietary assets, credentials, and personal data.
+          required: true
+
