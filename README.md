@@ -1,37 +1,54 @@
-# UE5 Blueprint Diagnostics Lab
+# UE5 Blueprint Diagnostics & LAN Control Lab
 
-A focused Codex skill and evidence-oriented knowledge base for explaining Unreal Engine 5 Blueprint graphs, diagnosing failures, and recording reproducible project cases.
+An evidence-oriented Codex skill and practical engineering handbook for Unreal Engine 5 Blueprint projects. It explains how to diagnose Blueprint failures, organize an asset-heavy project, visualize sensor data, package an Android controller, and connect that controller to a desktop UE application over a local network.
 
-The repository intentionally contains guidance and templates only. Real project cases, screenshots, node exports, engine-version details, and regression results will be added after the source project is reviewed and redacted.
+This repository contains **documentation and independently reproducible examples only**. It does not contain the original projects, packaged applications, Marketplace assets, private logs, machine paths, credentials, or personal information.
 
-## Included
+## Start here
 
-- `ue5-blueprint-troubleshooter` Codex skill;
-- symptom-based failure routing;
-- plain-language Blueprint explanation format;
-- reusable Blueprint architecture patterns;
-- project organization and safe asset-move guidance;
-- a verified-case template for reproducible postmortems.
+| Goal | Guide |
+| --- | --- |
+| Understand the inspected project without receiving its source | [Redacted project case study](docs/ue5/REDACTED_PROJECT_CASE_STUDY.md) |
+| Build Android-to-desktop control | [LAN remote-control Blueprint recipe](docs/ue5/LAN_REMOTE_CONTROL.md) |
+| Define messages safely | [Control protocol](docs/ue5/CONTROL_PROTOCOL.md) |
+| Package and test Android | [Android packaging guide](docs/ue5/ANDROID_PACKAGING.md) |
+| Build a drone and sensor dashboard | [Drone and sensor workflow](docs/ue5/DRONE_SENSOR_WORKFLOW.md) |
+| Diagnose common Blueprint faults | [Common failures](docs/ue5/COMMON_FAILURES.md) |
+| Install the Codex skill | [Skill entrypoint](skills/ue5-blueprint-troubleshooter/SKILL.md) |
 
-## Install
+## Reference architecture
 
-Copy `skills/ue5-blueprint-troubleshooter` into your personal Codex skills directory, then restart or refresh Codex.
+```mermaid
+flowchart LR
+    Phone[Android UMG controller] -->|TCP command + newline| Server[Desktop command gateway]
+    Server --> Validate[Parse and validate]
+    Validate --> Robot[Robot command component]
+    Validate --> Drone[Drone command component]
+    Robot --> State[Authoritative state]
+    Drone --> State
+    Sensor[Serial or simulated sensors] --> Normalize[Normalize + timestamp]
+    Normalize --> Charts[UMG charts]
+    State -->|TCP state message| Phone
+```
+
+The Android application sends intent, not direct unrestricted object access. The desktop application owns the simulation state, validates every message, applies movement on the game thread, and returns state or errors.
+
+## What is verified
+
+The case study is based on read-only inspection of two UE projects associated with UE 5.4 and package artifacts for Windows and Android. Selected UMG Blueprints compiled in the editor. Binary asset metadata confirmed TCP client calls, connection and receive delegates, IP/port input, press/release controls for motion and robot joints, camera controls, a drone pawn, chart data, and serial/Arduino references.
+
+The repository does **not** claim that every hidden Blueprint path was reproduced end to end. Each guide marks observations, recommended reconstruction, and verification steps separately.
+
+## Codex skill
+
+Copy `skills/ue5-blueprint-troubleshooter` into your Codex skills directory and refresh Codex.
 
 Example:
 
 ```text
-Use $ue5-blueprint-troubleshooter to explain this graph and design the smallest test for the reported Accessed None error.
+Use $ue5-blueprint-troubleshooter to design and verify an Android-to-desktop TCP control graph in UE5.
 ```
 
-## Evidence boundary
+## Release boundary
 
-UE behavior varies by engine version, platform, plugins, project settings, object lifetime, input system, and networking mode. A screenshot or node list alone does not prove runtime behavior. Project-specific causes remain hypotheses until reproduced or otherwise evidenced.
-
-See [COMMON_FAILURES.md](docs/ue5/COMMON_FAILURES.md), [BLUEPRINT_PATTERNS.md](docs/ue5/BLUEPRINT_PATTERNS.md), and [VERIFIED_CASE_TEMPLATE.md](docs/ue5/VERIFIED_CASE_TEMPLATE.md).
-
-## Current status
-
-The reusable skill and documentation are ready for review. The project-specific case library remains pending until shareable UE5 source material is available. The repository stays private during that review.
-
-MIT licensed. Third-party UE assets retain their original licenses and are not covered by this repository's license.
-
+MIT licensed original documentation and examples only. Unreal Engine, third-party plugins, and third-party assets retain their own licenses. See [OPEN_SOURCE_BOUNDARY.md](docs/OPEN_SOURCE_BOUNDARY.md).

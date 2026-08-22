@@ -13,6 +13,7 @@ BLOCKED_SUFFIXES = {".docx", ".xlsx", ".xls", ".pdf", ".ris", ".enw", ".nbib", "
 TEXT_SUFFIXES = {".csv", ".ini", ".json", ".md", ".ps1", ".py", ".svg", ".txt", ".yaml", ".yml"}
 PATTERNS = {
     "Windows user path": re.compile(r"[A-Za-z]:\\Users\\[^\\\s]+", re.IGNORECASE),
+    "possible personal phone number": re.compile(r"(?<!\d)1[3-9]\d{9}(?!\d)"),
     "possible email": re.compile(r"\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b", re.IGNORECASE),
     "possible private key": re.compile(r"BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY"),
     "possible API secret": re.compile(r"(?:api[_ -]?key|secret|token)\s*[:=]\s*['\"][^'\"]{8,}", re.IGNORECASE),
@@ -63,4 +64,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

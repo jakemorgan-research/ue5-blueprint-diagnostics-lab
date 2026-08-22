@@ -1,6 +1,6 @@
 ---
 name: ue5-blueprint-troubleshooter
-description: Diagnose and explain Unreal Engine 5 Blueprint compile/runtime problems, fragile execution flows, object-reference failures, input issues, and project-organization risks. Use when a user provides Blueprint screenshots, node descriptions, logs, or a UE5 project problem; do not invent project-specific causes without evidence.
+description: Diagnose and explain Unreal Engine 5 Blueprint problems and design evidence-backed Blueprint workflows for LAN remote control, Android controllers, drones, sensors, packaging, and project organization. Use for Blueprint screenshots, node descriptions, logs, package failures, or UE project architecture; do not invent project-specific causes without evidence.
 ---
 
 # UE5 Blueprint Troubleshooter
@@ -46,8 +46,10 @@ Treat moves, renames, redirector fixes, asset deletion, plugin removal, and conf
 - Read `references/common-failures.md` for symptom-based diagnosis.
 - Read `references/blueprint-explanation.md` when documenting or teaching a graph.
 - Read `references/project-organization.md` for asset layout, moves, renames, or cleanup.
+- Read `references/lan-remote-control.md` for Android-to-desktop TCP control, command framing, press/release input, and fail-safe behavior.
+- Read `references/android-packaging.md` for Android package diagnosis and real-device verification.
+- Read `references/drone-sensors.md` for drone, serial sensor, telemetry, and chart workflows.
 
 ## Completion
 
 A diagnosis is complete when the symptom is reproduced or explicitly marked unverified, the likely cause is tied to evidence, the proposed fix is scoped, and the required verification modes are listed.
-

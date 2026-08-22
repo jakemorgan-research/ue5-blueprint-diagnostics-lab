@@ -3,8 +3,8 @@
 - [x] Reusable Blueprint diagnosis skill.
 - [x] Common-failure and project-organization guides.
 - [x] Verified-case intake template.
-- [ ] Review the supplied UE5 project and determine redistribution boundaries.
-- [ ] Add the first redacted, reproducible Blueprint case.
+- [x] Review the supplied UE5 project and determine redistribution boundaries.
+- [x] Add the first redacted, reproducible Blueprint case.
+- [x] Add Android-to-desktop LAN control, packaging, drone, and sensor guides.
 - [ ] Add engine-version and packaged-build regression evidence.
-- [ ] Decide public visibility only after project-specific material passes review.
-
+- [ ] Publish only after the project-specific material passes privacy review.
