@@ -19,6 +19,11 @@
   <img src="docs/media/getting-started.svg" alt="Four-step UE5 LAN demo quickstart" width="100%">
 </p>
 
+<p align="center">
+  <img src="docs/media/ue5-lan-control-walkthrough.gif" alt="Animated Android-to-desktop LAN control walkthrough" width="100%">
+</p>
+<p align="center"><sub>Animated source walkthrough, not recorded gameplay. It mirrors the clean-room demo's documented command and validation path.</sub></p>
+
 ## Choose your path
 
 | 📱 Build remote control | 🚁 Build drone + data | 🧩 Read verified nodes | 📦 Ship Android |
