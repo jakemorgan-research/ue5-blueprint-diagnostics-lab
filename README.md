@@ -137,3 +137,7 @@ Original <code>.uasset</code>, <code>.umap</code>, Windows builds, APKs, Marketp
 </details>
 
 <p align="center"><sub>Original documentation and diagrams: MIT. Unreal Engine and third-party components retain their own licenses.</sub></p>
+
+## LAN demo (UE 5.5)
+
+Reproduction steps: [docs/lan-demo-ue55.md](docs/lan-demo-ue55.md).
